@@ -1,15 +1,176 @@
 html, body {
-    width: 100vh;
+    width: 100vw;
+    max-width:100%;
     height: 100vh;
+    max-height: 100%;
     margin: 0;
     padding: 0;
     font-family: Nunito, sans-serif;
 }
 
-.container {
+.content-layer {
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.content-layer-loading {
+    width: 100vw; height: 100vh;
+    max-width:100%;
+}
+
+.content-layer-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: #63aec4;
+    min-width: 100vw; height: 100vh; max-height: 100%;
+}
+
+.content-layer-mobile .before,
+.content-layer-mobile .after {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-layer-desktop .before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.content-layer-desktop .after {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.after ul {
+    margin: 0; padding: 0;
+    list-style-type: none;
+}
+
+.after li {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex; align-items: center;
+    margin: 12px 0;
+}
+
+.content-layer-desktop .after li.twitter { padding-left: 24px; }
+.content-layer-desktop .after li.email { padding-left: 24px; }
+
+.after li:hover > .icon {
+    transform: rotate(10deg);
+}
+
+.after li .icon {
+    transition: 0.175s linear;
+    width: 64px; height: 64px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+}
+
+.after h1 {
+    background-color: #f6c606;
+    padding: 4px 18px;
+}
+
+.content-layer-mobile .after li {
+    margin: 12px;
+}
+
+.content-layer-mobile .after li .title {
+    font-size: 16px;
+}
+
+.after li.instagram { --color: #ff80d7; }
+.after li.instagram .icon {
+    background-image: url(../img/instagram.png);
+}
+
+.after li.twitter { --color: #63aec4; }
+.after li.twitter .icon {
+    background-image: url(../img/twitter.png);
+}
+
+.after li.website { --color: #ff80d7; }
+.after li.website .icon {
+    background-image: url(../img/cosy.png);
+}
+
+.after li.email { --color: #ffffff; }
+.after li.email .icon {
+    background-image: url(../img/mail.png);
+}
+
+.after li .title {
+    background: black;
+    border-radius: 200px;
+    font-weight: 800;
+    padding: 8px 16px;
+    text-align: left;
+}
+
+.after li .title a {
+    color: var(--color);
+    border-bottom: 2px solid var(--color);
+    text-decoration: none;
+}
+
+.content-layer-desktop img {
     height: 100%;
 }
+
+.content-layer-mobile {
+    background-color: #7fa0af;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 32px;
+    width: 100vw;
+    max-width:100%;
+}
+
+.content-layer-mobile img {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* loading */
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+.content-layer-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.content-layer-loading img#loading {
+    width: 64px; height: 64px;
+    animation: spin .77s ease-in-out infinite;
+}
+
+.hidden {
+    display: none;
+}
+
 
 .content-if-big {
     display: flex;
