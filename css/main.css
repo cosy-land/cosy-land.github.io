@@ -212,3 +212,9 @@ a:hover {
     width: 10vw;
     transform: rotate(-4deg)
 }
+
+@supports (-webkit-touch-callout: none){
+    .content-layer-desktop img {
+        height: -webkit-fill-available !important;
+    }
+}
