@@ -13,6 +13,10 @@ html, body {
     top: 0; left: 0;
 }
 
+body {
+    cursor: url(//assets.cosy.land/images/cosy2/mouse/42xAUTO/cursor.png), auto !important;
+}
+
 .content-layer-loading {
     width: 100vw; height: 100vh;
     max-width:100%;
@@ -125,6 +129,10 @@ html, body {
     color: var(--color);
     border-bottom: 2px solid var(--color);
     text-decoration: none;
+}
+
+a:hover {
+    cursor: url(//assets.cosy.land/images/cosy2/mouse/42xAUTO/pointer.png), auto !important;
 }
 
 .content-layer-desktop img {
