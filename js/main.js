@@ -1,3 +1,16 @@
+const ralph = () => {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
 const puter = () => {
     // figure out what device form factor this is
     // if browser is too old for matchMedia, use mobile layout
@@ -43,6 +56,14 @@ const puter = () => {
         })
 
     if(formFactor == 'desktop'){
+
+        if(ralph()){
+            setTimeout(() => {
+                document.querySelector('.content-layer-desktop .before img').style.width = '-webkit-fill-available';
+                document.querySelector('.content-layer-desktop .before img').style.height = '-webkit-fill-available';
+            }, 500);
+        }
+
         document.documentElement.addEventListener('wheel', event => {
             event.preventDefault();
             if(event.deltaX){
@@ -69,6 +90,10 @@ const pimpek = () => {
     let newFormFactor = isMobile ? 'mobile' : 'desktop';
     if(newFormFactor != window.formFactor){
         window.location.reload();
+    }
+    if(ralph()){
+        document.querySelector('.content-layer-desktop .before img').style.width = '-webkit-fill-available';
+        document.querySelector('.content-layer-desktop .before img').style.height = '-webkit-fill-available';
     }
 }
 
