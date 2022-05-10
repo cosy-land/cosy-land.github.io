@@ -136,7 +136,7 @@ a:hover {
 }
 
 .content-layer-desktop img {
-    height: 100%;
+    height: 100vh;
 }
 
 .content-layer-mobile {
