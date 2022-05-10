@@ -216,5 +216,6 @@ a:hover {
 @supports (-webkit-touch-callout: none){
     .content-layer-desktop img {
         height: -webkit-fill-available !important;
+        width: -webkit-fill-available !important;
     }
 }
