@@ -64,14 +64,16 @@ body {
 .after li {
     font-size: 20px;
     font-weight: 600;
-    display: flex; align-items: center;
+    display: flex; flex-direction: column;
     margin: 12px 0;
 }
 
+
+.content-layer-desktop .after li.discord { padding-left: 24px; }
 .content-layer-desktop .after li.twitter { padding-left: 24px; }
 .content-layer-desktop .after li.email { padding-left: 24px; }
 
-.after li:hover > .icon {
+.after li:hover > .hstack .icon {
     transform: rotate(10deg);
 }
 
@@ -97,10 +99,17 @@ body {
     font-size: 16px;
 }
 
+.after li.discord { --color: white; padding-bottom: 8px; }
+.after li.discord .title { background-color: #5865F2; }
+.after li.discord .icon {
+    background-image: url(../img/discord.png);
+}
+
 .after li.instagram { --color: #ff80d7; }
 .after li.instagram .icon {
     background-image: url(../img/instagram.png);
 }
+
 
 .after li.twitter { --color: #63aec4; }
 .after li.twitter .icon {
@@ -128,7 +137,14 @@ body {
 .after li .title a {
     color: var(--color);
     border-bottom: 2px solid var(--color);
+    opacity: .9;
     text-decoration: none;
+}
+
+.after li .subtitle {
+    max-width: 500px;
+    font-size: 16px;
+    text-align: left; 
 }
 
 a:hover {
@@ -211,4 +227,9 @@ a:hover {
 .cosy-absolute img {
     width: 10vw;
     transform: rotate(-4deg)
+}
+
+.hstack {
+    display: flex;
+    align-items: center;
 }
