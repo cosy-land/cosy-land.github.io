@@ -1,4 +1,4 @@
-import { W as t } from "./index-DmBOuyGg.js";
+import { W as t } from "./index-DSc-2N8p.js";
 class s extends t {
   constructor() {
     super(), this.handleVisibilityChange = () => {
